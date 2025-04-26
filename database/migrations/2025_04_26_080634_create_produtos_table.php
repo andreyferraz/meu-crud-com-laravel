@@ -12,8 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('produtos', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id(); // Cria uma coluna de ID auto-incrementável (chave primária)
+            $table->string('nome');
+            $table->text('descricao')->nullable(); // O campo descrição pode ser nulo
+            $table->timestamps(); // Cria as colunas `created_at` e `updated_at` para registrar a data de criação e atualização
         });
     }
 
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('produtos');
+        Schema::dropIfExists('produtos');// Caso precise desfazer a migration, a tabela será excluída
     }
 };
