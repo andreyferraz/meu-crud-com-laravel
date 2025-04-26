@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Produto; // Importa o modelo Produto
+use Illuminate\Support\Facades\Redirect;
 
 class ProdutoController extends Controller
 {
